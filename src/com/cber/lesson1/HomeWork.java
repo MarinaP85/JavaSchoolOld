@@ -48,6 +48,26 @@ public class HomeWork {
         System.out.println("Задание 6:");
         searchPattern(text, patternStr);
 
+        //Задание 7
+        boolean married = false;
+        Person ivan = new Person(true, "Ivan Petrov");
+        Person anna = new Person(false, "Anna Sidorova");
+        Person petr = new Person(true, "Petr Alexeev");
+        Person elena = new Person(false, "Elena Nikolaeva");
+        System.out.println(ivan.getName() + ": status - " + married + " spouse - " + ivan.getSpouseName());
+        married = ivan.marry(anna);
+        System.out.println(ivan.getName() + ": status - " + married + " spouse - " + ivan.getSpouseName());
+        married = ivan.marry(petr);
+        System.out.println(ivan.getName() + ": status - " + married + " spouse - " + ivan.getSpouseName());
+        married = elena.marry(petr);
+        System.out.println(elena.getName() + ": status - " + married + " spouse - " + elena.getSpouseName());
+        married = elena.marry(ivan);
+        System.out.println(elena.getName() + ": status - " + married + " spouse - " + elena.getSpouseName());
+        married = elena.marry(ivan);
+        System.out.println(elena.getName() + ": status - " + married + " spouse - " + elena.getSpouseName());
+        System.out.println(ivan.getName() + ": spouse - " + ivan.getSpouseName());
+        System.out.println(anna.getName() + ": spouse - " + anna.getSpouseName());
+        System.out.println(petr.getName() + ": spouse - " + petr.getSpouseName());
     }
 
     //2004. Високосный год
