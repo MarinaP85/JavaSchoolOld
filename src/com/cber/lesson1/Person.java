@@ -29,16 +29,9 @@ public class Person {
     public boolean marry(Person person) {
         if (this.spouse != person) {
             if (this.man != person.getMan()) {
-                if (this.spouse != null) {
-                    divorce(this);
-                }
-                if (person.spouse != null) {
-                    divorce(person);
-                }
-
+                divorce();
                 this.spouse = person;
-                person.spouse = this;
-
+                person.marry(this);
                 return true;
             } else {
                 return false;
@@ -48,10 +41,10 @@ public class Person {
         }
     }
 
-    public boolean divorce(Person person) {
-        if (person.spouse != null) {
-            person.spouse.spouse = null;
-            person.spouse = null;
+    public boolean divorce() {
+        if (this.spouse != null) {
+            this.spouse.spouse = null;
+            this.spouse = null;
             return true;
         } else {
             return false;

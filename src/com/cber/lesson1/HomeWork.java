@@ -34,7 +34,7 @@ public class HomeWork {
         //Задание 4
         numbers = new int[]{4, 1, 3, 0, 4, 1, 1};
         System.out.println("Задание 4:");
-        countNumbers(numbers);
+        countNumbers(numbers, 5);
 
         //Задание 5
         String text = ",as,y,,tyh,u,irohg,,";
@@ -112,12 +112,12 @@ public class HomeWork {
             resultArray[i] = num;
             System.out.print(resultArray[i] + " ");
         }
-        System.out.println("");
+        System.out.println(" ");
     }
 
     //2028. Числа 0-4
-    public static void countNumbers(int[] numbers) {
-        int[] countNumbers = new int[5];
+    public static void countNumbers(int[] numbers, int length) {
+        int[] countNumbers = new int[length];
         for (int num : numbers) {
             if (num < countNumbers.length) {
                 countNumbers[num]++;
@@ -133,21 +133,20 @@ public class HomeWork {
 
     //2037. Строки. Слишком короткие слова
     public static String shortWords(String text, int length) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         String[] words = text.split(",");
         for (String word : words) {
             if (word.length() >= length) {
-                result = result + " " + word;
+                result.append(" ").append(word);
             }
         }
-        result = result.trim().replace(' ', ',');
-        return result;
+        return result.toString().trim().replace(' ', ',');
     }
 
     //2042. Строки. Поиск образца в тексте
     public static void searchPattern(String text, String patternStr) {
-        int i = 0;
+        int i;
         Pattern pattern = Pattern.compile(patternStr);
         Matcher matcher = pattern.matcher(text);
 
@@ -156,6 +155,6 @@ public class HomeWork {
             i = matcher.start() + 1;
             System.out.print(i + " ");
         }
-        System.out.println("");
+        System.out.println(" ");
     }
 }
