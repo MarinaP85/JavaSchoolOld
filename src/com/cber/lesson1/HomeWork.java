@@ -112,7 +112,7 @@ public class HomeWork {
             resultArray[i] = num;
             System.out.print(resultArray[i] + " ");
         }
-        System.out.println(" ");
+        System.out.println();
     }
 
     //2028. Числа 0-4
@@ -155,6 +155,6 @@ public class HomeWork {
             i = matcher.start() + 1;
             System.out.print(i + " ");
         }
-        System.out.println(" ");
+        System.out.println();
     }
 }
