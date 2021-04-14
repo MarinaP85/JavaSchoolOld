@@ -1,10 +1,14 @@
 package com.cber.lesson3;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class HomeWork3 {
     public static void main(String[] args) {
+
+        //Задание 1
+        //--------------------------------------------------
+        System.out.println("Задание 1:");
+        System.out.println("--------------------------------------------------");
         MyCountMap<? super Integer> map = new MyCountMap<>();
 
         //добавляет элемент в этот контейнер
@@ -58,5 +62,52 @@ public class HomeWork3 {
         System.out.println("mapCopy2: ");
         map.printCountMap();
         System.out.println(mapCopy);
+
+        //Задание 2
+        //--------------------------------------------------
+        System.out.println("--------------------------------------------------");
+        System.out.println("Задание 2:");
+        System.out.println("--------------------------------------------------");
+
+        List<Integer> source = new ArrayList<>(Arrays.asList(8, 1, 3, 5, 6, 4));
+        List<Integer> list = CollectionUtils.newArrayList();
+
+        CollectionUtils.addAll(source, list);
+        System.out.println("CollectionUtils.addAll:");
+        System.out.println(list);
+
+        System.out.print("CollectionUtils.indexOf 5: ");
+        System.out.println(CollectionUtils.indexOf(list, 5));
+        System.out.print("CollectionUtils.indexOf 2: ");
+        System.out.println(CollectionUtils.indexOf(list, 2));
+
+        System.out.println("CollectionUtils.limit:");
+        System.out.println(CollectionUtils.limit(list, 4));
+
+        System.out.println("CollectionUtils.add:");
+        CollectionUtils.add(list, 7);
+        CollectionUtils.add(list, 1);
+        System.out.println(list);
+
+        System.out.println("CollectionUtils.removeAll (3,5):");
+        CollectionUtils.removeAll(list, Arrays.asList(3, 5));
+        System.out.println(list);
+
+        System.out.println("CollectionUtils.containsAll (6,8):");
+        System.out.println(CollectionUtils.containsAll(list, Arrays.asList(6, 8)));
+        System.out.println("CollectionUtils.containsAll (3,8):");
+        System.out.println(CollectionUtils.containsAll(list, Arrays.asList(3, 8)));
+
+        System.out.println("CollectionUtils.containsAny (3,8):");
+        System.out.println(CollectionUtils.containsAny(list, Arrays.asList(3, 8)));
+        System.out.println("CollectionUtils.containsAny (3,5):");
+        System.out.println(CollectionUtils.containsAny(list, Arrays.asList(3, 5)));
+
+        System.out.println("CollectionUtils.range (4,7):");
+        System.out.println(CollectionUtils.range(list, 4, 7));
+
+        System.out.println("CollectionUtils.range (4,7):");
+        Comparator<Integer> comprator = Comparator.naturalOrder();
+        System.out.println(CollectionUtils.range(list, 4, 7, comprator));
     }
 }
