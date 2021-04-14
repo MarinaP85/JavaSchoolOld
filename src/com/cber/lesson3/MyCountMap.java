@@ -56,7 +56,7 @@ public class MyCountMap<T> implements CountMap<T> {
     }
 
     @Override
-    public void toMap(Map destination) {
+    public void toMap(Map<?, Integer> destination) {
         destination = this.countMap;
     }
 

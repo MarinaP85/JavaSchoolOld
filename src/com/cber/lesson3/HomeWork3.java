@@ -47,13 +47,14 @@ public class HomeWork3 {
 
         //Вернуть java.util.Map. ключ - добавленный элемент,
         //значение - количество его добавлений
-        Map<? super Integer, Integer> mapCopy = new HashMap<>();
+        Map<? super Integer, Integer> mapCopy;
         mapCopy = map.toMap();
         System.out.println("mapCopy: ");
         System.out.println(mapCopy);
 
         //всю информацию записать в destination
-        map.toMap(mapCopy);
+        Map<? super Integer, Integer> mapCopy2 = new HashMap<>();
+        map.toMap(mapCopy2);
         System.out.println("mapCopy2: ");
         map.printCountMap();
         System.out.println(mapCopy);
