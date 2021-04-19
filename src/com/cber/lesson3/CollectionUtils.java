@@ -46,24 +46,12 @@ public class CollectionUtils {
         return check;
     }
 
-    public static <T extends Comparable<? super T>> List<? super T> range(List<? extends T> list, T min, T max) {
-        int maxElement = list.indexOf(max);
-        List<T> listResult = new ArrayList<>();
-        CollectionUtils.addAll(list, listResult);
-        Collections.sort(listResult);
-        listResult = listResult.subList(listResult.indexOf(min), listResult.indexOf(max));
-        listResult.add(list.get(maxElement));
-        return listResult;
+    public static <T extends Comparable<? super T>> List<? extends T> range(List<? extends T> list, T min, T max) {
+        return list.stream().sorted().filter(el -> (el.compareTo(min) >= 0) && (el.compareTo(max) <= 0)).collect(Collectors.toList());
     }
 
-    public static <T> List<? super T> range(List<? extends T> list, T min, T max, Comparator<T> comparator) {
-        int maxElement = list.indexOf(max);
-        List<T> listResult = new ArrayList<>();
-        CollectionUtils.addAll(list, listResult);
-        listResult.sort(comparator);
-        listResult = listResult.subList(listResult.indexOf(min), listResult.indexOf(max));
-        listResult.add(list.get(maxElement));
-        return listResult;
+    public static <T extends Comparable<? super T>> List<? extends T> range(List<? extends T> list, T min, T max, Comparator<? super T> comparator) {
+        return list.stream().sorted(comparator).filter(el -> (el.compareTo(min) >= 0) && (el.compareTo(max) <= 0)).collect(Collectors.toList());
     }
 
 }

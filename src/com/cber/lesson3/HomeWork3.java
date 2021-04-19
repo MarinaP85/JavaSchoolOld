@@ -107,7 +107,7 @@ public class HomeWork3 {
         System.out.println(CollectionUtils.range(list, 4, 7));
 
         System.out.println("CollectionUtils.range (4,7):");
-        Comparator<Integer> comprator = Comparator.naturalOrder();
-        System.out.println(CollectionUtils.range(list, 4, 7, comprator));
+        Comparator<Integer> comparator = Comparator.naturalOrder();
+        System.out.println(CollectionUtils.range(list, 4, 7, comparator));
     }
 }
