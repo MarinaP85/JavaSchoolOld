@@ -9,6 +9,9 @@ public class Car {
         this.type = type;
     }
 
+    public Car() {
+    }
+
     public String getModel() {
         return this.model;
     }

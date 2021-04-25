@@ -80,8 +80,8 @@ public class HomeWork2 {
             Collections.addAll(setWords, text.replace("\n\r", " ").split("\\s+"));
 
             List<String> str = new ArrayList<>(setWords);
-            Comparator<String> compratorLength = Comparator.comparingInt(String::length);
-            str.sort(compratorLength);
+            Comparator<String> comparatorLength = Comparator.comparingInt(String::length);
+            str.sort(comparatorLength);
 
             for (String s : str)
                 System.out.println(s);
